@@ -138,7 +138,7 @@ app.post("/generate-question", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World!" + process.env.OPENAI_API_KEY);
 }
 );
 
