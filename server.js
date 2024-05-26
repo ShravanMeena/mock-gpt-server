@@ -1,6 +1,8 @@
 const express = require("express");
 var cors = require("cors");
 const app = express();
+app.use(cors());
+
 const port = 5000;
 const OpenAI = require("openai");
 
@@ -13,7 +15,6 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
